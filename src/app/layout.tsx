@@ -58,6 +58,9 @@ export default function RootLayout({
                 <li>
                   <Link href="/dashboard" className="nav-link">Dashboard</Link>
                 </li>
+                <li>
+                  <Link href="/feedback" className="nav-link">Feedback</Link>
+                </li>
               </ul>
 
               <div className="header-status">

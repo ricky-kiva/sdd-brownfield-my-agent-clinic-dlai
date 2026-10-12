@@ -33,8 +33,8 @@ This document defines the streamlined verification pipeline and merge readiness 
 ---
 
 ## Merge Readiness Checklist
-- [ ] Feature branch `feature/feedback-form` is active.
-- [ ] `specs/2026-10-12-feedback-form/` contains `requirements.md`, `plan.md`, and `validation.md`.
-- [ ] `npx.cmd tsc --noEmit` passes with 0 type errors.
-- [ ] `npm.cmd test` passes 100% of unit and integration test suites.
+- [x] Feature branch `feature/feedback-form` is active.
+- [x] `specs/2026-10-12-feedback-form/` contains `requirements.md`, `plan.md`, and `validation.md`.
+- [x] `npx.cmd tsc --noEmit` passes with 0 type errors.
+- [x] `npm.cmd test` passes 100% of unit and integration test suites (80/80 tests passing).
 - [ ] Working tree is clean and ready to merge into `main`.

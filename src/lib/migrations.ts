@@ -71,6 +71,23 @@ export const migrations: Migration[] = [
       }
     },
   },
+  {
+    id: '004_feedback_table',
+    run: (db: Database.Database) => {
+      db.exec(`
+        CREATE TABLE IF NOT EXISTS feedback (
+          id TEXT PRIMARY KEY,
+          agent_id TEXT NOT NULL,
+          rating INTEGER NOT NULL CHECK(rating >= 1 AND rating <= 5),
+          comments TEXT NOT NULL,
+          created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_feedback_created_at ON feedback(created_at);
+        CREATE INDEX IF NOT EXISTS idx_feedback_agent_id ON feedback(agent_id);
+      `);
+    },
+  },
 ];
 
 /**

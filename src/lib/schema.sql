@@ -60,3 +60,15 @@ CREATE TABLE IF NOT EXISTS _migrations (
   applied_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- Feedback submissions table
+CREATE TABLE IF NOT EXISTS feedback (
+  id TEXT PRIMARY KEY,
+  agent_id TEXT NOT NULL,
+  rating INTEGER NOT NULL CHECK(rating >= 1 AND rating <= 5),
+  comments TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_feedback_created_at ON feedback(created_at);
+CREATE INDEX IF NOT EXISTS idx_feedback_agent_id ON feedback(agent_id);
+
